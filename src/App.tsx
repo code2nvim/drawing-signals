@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useSignal } from "@preact/signals-react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 
 function App() {
-  const [count, setCount] = useState(0);
-  const increment = () => setCount((prev) => prev + 1);
+  const count = useSignal(0);
+  const increment = () => count.value++;
 
   return (
     <main className="flex h-screen flex-col items-center justify-center bg-gray-900 text-white">
